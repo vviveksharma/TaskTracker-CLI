@@ -1,0 +1,35 @@
+version: '3.8'
+
+networks:
+  tasktracker_network:
+
+services:
+  db:
+    image: postgres:13-alpine
+    container_name: taskTrackerCLI-psql
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: taskTracker-CLI
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - tasktracker_network
+
+  app:
+    build:
+      context: .
+      dockerfile: dockerFile
+    container_name: taskTrackerCLI-server
+    depends_on:
+      - db
+    ports:
+      - "8000:8000"
+    networks:
+      - tasktracker_network
+
+volumes:
+  postgres_data:
+
