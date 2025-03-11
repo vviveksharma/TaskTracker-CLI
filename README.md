@@ -1,11 +1,22 @@
-# Golang Backend with Docker & CLI: A Dev’s Approach 🚀 🚀
+# Golang Backend with Docker & CLI: A Developer’s Approach 🚀
 
-As in this code I have creates a complete golang server using the `go-fiber` library of the go and then adding the all the services to the `cli` cammands using `cobra` the go library.
+In this project, I’ve built a complete Golang server using the go-fiber framework and integrated all services with a Command-Line Interface (CLI) using the cobra library. This setup provides a seamless development experience, combining the power of a backend server with the flexibility of CLI commands.
 
-### Steps to run CLI
-- Start the server on docker using `make compose-with-debug`. You can find other cmds as per your convience on the MakeFile.
-- Go the folder cli and run `go build -o task`
-- Now you can run the cli using `./task`. As the above cmd will give the binary of the CLI.
+## Steps to run CLI
 
-<b>For more understanding how service is created , database connection and CLI createion please refer to this blog</b>
-https://medium.com/@sharmavivek1709/golang-backend-with-docker-cli-a-devs-approach-7700665f2daf
+1. Start the server using Docker by running make compose-with-debug. Additional commands are available in the Makefile for your convenience.
+
+2. Navigate to the cli folder and build the CLI binary using the command:
+
+   ```bash
+       go build -o task
+   ```
+
+3. Run the CLI using the generated binary:
+   ```bash
+   ./task
+   ```
+
+This will allow you to interact with the backend services directly through the CLI.
+
+<b>For more understanding how service is created, the database connection and how the CLI is created please refer to this medium blog</b>: https://medium.com/@sharmavivek1709/golang-backend-with-docker-cli-a-devs-approach-7700665f2daf
